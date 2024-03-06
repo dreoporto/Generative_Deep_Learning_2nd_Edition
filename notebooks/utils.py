@@ -9,7 +9,7 @@ def sample_batch(dataset):
 
 
 def display(
-    images, n=10, size=(20, 3), cmap="gray_r", as_type="float32", save_to=None
+    images, n=10, size=(20, 3), cmap="gray_r", as_type="float32", save_to=None, show_image=True
 ):
     """
     Displays n random images from each one of the supplied arrays.
@@ -28,5 +28,8 @@ def display(
     if save_to:
         plt.savefig(save_to)
         print(f"\nSaved to {save_to}")
-
-    plt.show()
+        
+    if show_image:
+        plt.show()
+    else:
+        plt.close()
